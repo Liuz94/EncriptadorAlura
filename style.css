@@ -1,0 +1,58 @@
+body{
+    background-color: #E9ECF8;
+    font-family: 'Inter', sans-serif;
+}
+main{
+    width: 100%;
+}
+/*rows="15" cols="30"*/
+textarea{
+    height: 500px;
+    width: 100%;
+    resize: none;
+}
+::placeholder {
+    font-family: 'Inter', sans-serif;
+    color: #0A3871;
+    font-style: italic;
+    opacity: .5;
+}
+
+.logo{
+    width: 128px;
+    height: 48px;
+    padding: 40px 40px;
+}
+.conteiner{
+    width: 940px;
+}
+.ingresoTexto{
+    float: left;
+    padding: 10px;
+    width: 500px;
+}
+.textonormal{
+    font-family: 'Inter', sans-serif;
+    background-color: #E9ECF8;
+    color: #0A3871;
+    border: none;
+    font-size: 1.3em;
+}
+
+.textonormal:focus {
+    outline: none;
+}
+
+.respuesta{
+    float: left;
+    background-color: white;
+    width: 15%;
+}
+
+.botones_encriptar{
+    padding: 12px 100px;
+    border-radius: 10px;
+    border: none;
+    vertical-align: bottom;
+}
+

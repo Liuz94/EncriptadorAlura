@@ -122,3 +122,17 @@ textarea{
     outline: none;
 }
 
+.botones_copiar{
+    background-color: #ffffff;
+    border-color: #052051;
+    border-width: 0.8px;
+    width: 60%;
+    height: 50px;
+    border-radius: 15px;
+    color: #0A3871;
+    margin-top: 20px;
+    transition: background-color 0.1s linear 0.1s;
+}
+.botones_copiar:hover{
+    background-color: #e2e2e2;
+}

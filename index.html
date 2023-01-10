@@ -39,6 +39,7 @@
             </ul>
             <div  class="resultado">
                <textarea readonly="readonly" id="final"></textarea>
+                <input onclick="copiar()" type="button" class="botones_copiar" id="copiar" value="Copiar">
             </div>
         </div>
 
@@ -51,7 +52,8 @@
         var condicion = 0;
         let parametrosencriptacion = ["ai", "enter", "imes", "ober", "ufat"];
         let letras = ["a", "e", "i", "o", "u"];
-         document.getElementById("final").style.display = "none";
+        document.getElementById("final").style.display = "none";
+        document.getElementById("copiar").style.display = "none";
         function encriptacion() {
                 condicion = 1;
                 capturarTexto();
@@ -64,7 +66,8 @@
         function escoder(){
             document.getElementById("respuestaNada").style.display = "none";
             document.getElementById("final").style.display = "inline";
-            document.getElementById("text_area").value = "";
+            document.getElementById("text_area").value = ""; 
+            document.getElementById("copiar").style.display = "inline";
         }
 
         function capturarTexto(){
@@ -138,6 +141,11 @@
 
             $("#final").html(mensaje);
 
+        }
+
+        function copiar(){
+            var content = document.getElementById('final').innerHTML;
+            navigator.clipboard.writeText(content);
         }
            
     </script>

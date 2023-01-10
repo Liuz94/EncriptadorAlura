@@ -21,22 +21,125 @@
         <div class="conteiner">
                 <div class="ingresoTexto">
 
-                    <textarea class="textonormal" name="mensaje"  placeholder="Ingrese Texto Aqui"></textarea>
+                    <textarea id="text_area" class="textonormal" name="mensaje"  placeholder="Ingrese Texto Aqui"></textarea>
                             <div class="botones">
-                                <p class="advertencia">⚠Solo letras minúsculas y sin acentos</p>
-                                <input type="button" class="botones_encriptar" id="encriptar" value="Encriptar">
-                                <input type="button" class="botones_encriptar" id="desencriptar" value="Desencriptar">
+                                <p class="advertencia">⚠ Solo letras minúsculas y sin acentos</p>
+                                <input onclick="encriptacion()" type="button" class="botones_encriptar" id="encriptar" value="Encriptar">
+                                <input onclick="desencriptacion()" type="button" class="botones_desencriptar" id="desencriptar" value="Desencriptar">
                             </div>
                 </div>
 
-                <div class="respuesta">
-
-                    <p>Alav</p>
-
-                </div>
+        </div>
+        <div class="respuesta">
+            
+            <ul class="nada" id="respuestaNada">
+                <li><img class="nadarespuesta" src="imagenes/Muñeco.svg"></li>
+                <li><p id="nadaTitulo">Ningún mensaje fue encontrado</p></li>
+                <li><p  id="nadaDescripcion">Ingresa el texto que desees encriptar o desencriptar.</p></li>
+            </ul>
+            <div  class="resultado">
+               <textarea readonly="readonly" id="final"></textarea>
+            </div>
         </div>
 
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        var textoEscrito;
+        var textoEncriptado;
+        var textoDesencriptado;
+        var condicion = 0;
+        let parametrosencriptacion = ["ai", "enter", "imes", "ober", "ufat"];
+        let letras = ["a", "e", "i", "o", "u"];
+         document.getElementById("final").style.display = "none";
+        function encriptacion() {
+                condicion = 1;
+                capturarTexto();
+        }
 
+        function desencriptacion() {
+                condicion = 2;
+                capturarTexto();
+        }
+        function escoder(){
+            document.getElementById("respuestaNada").style.display = "none";
+            document.getElementById("final").style.display = "inline";
+            document.getElementById("text_area").value = "";
+        }
+
+        function capturarTexto(){
+            textoEscrito = document.getElementById("text_area").value;
+            textoEscrito = textoEscrito.toLowerCase();
+
+            console.log(textoEscrito);
+            if(condicion ==1 && textoEscrito != ""){
+                textoEncriptado = textoEscrito;
+                escoder();
+            }
+            if (condicion == 2 && textoEscrito != "") {
+                textoDesencriptado = textoEscrito;
+                escoder();
+            }
+            comparaLetras();
+        } 
+
+        function comparaLetras(){
+                if(condicion == 1){
+                    codificar();
+
+                }
+                if (condicion == 2) {
+                    decodificar();
+
+                }
+
+
+        }
+
+        function codificar() {
+            textoEncriptado = "";
+            var validacion = 0;
+            for (let x = 0; x < textoEscrito.length; x++) {
+               
+                var letra=textoEscrito.charAt(x);
+
+                for (let y = 0; y < letras.length; y++) {
+                    if (letras[y] == letra) {
+                        textoEncriptado = textoEncriptado + letra.replace(letras[y], parametrosencriptacion[y]);
+                        validacion = 1;
+                        break;
+                    }
+                    validacion = 2;
+                }
+
+                if (validacion == 2) {
+                     textoEncriptado = textoEncriptado + letra;
+                }
+
+
+                console.log(x, textoEncriptado);
+
+            }
+            enviarMensaje(textoEncriptado);
+        }  
+        function decodificar(){
+            for (let x = 0; x < parametrosencriptacion.length; x++) {
+
+                textoDesencriptado = textoDesencriptado.replace(new RegExp(parametrosencriptacion[x], "g"), letras[x]);
+            
+            }
+            
+            
+            console.log(textoDesencriptado);
+            enviarMensaje(textoDesencriptado);
+            
+        }
+        function enviarMensaje(mensaje){
+
+            $("#final").html(mensaje);
+
+        }
+           
+    </script>
 </body>
 </html>

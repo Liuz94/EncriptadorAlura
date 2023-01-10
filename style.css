@@ -2,14 +2,12 @@ body{
     background-color: #E9ECF8;
     font-family: 'Inter', sans-serif;
 }
-main{
-    width: 100%;
-}
 /*rows="15" cols="30"*/
 textarea{
     height: 500px;
-    width: 100%;
+    width: 90%;
     resize: none;
+    font-family: 'Inter', sans-serif;
 }
 ::placeholder {
     font-family: 'Inter', sans-serif;
@@ -25,6 +23,7 @@ textarea{
 }
 .conteiner{
     width: 940px;
+    padding-left: 15%;
 }
 .ingresoTexto{
     float: left;
@@ -46,13 +45,80 @@ textarea{
 .respuesta{
     float: left;
     background-color: white;
-    width: 15%;
+    width: 300px;
+    height: 600px;
+    margin-left: 10%;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px #E9ECF8;
+}
+.advertencia{
+    font-size: 0.7em;
+    color: #495057;
+}
+.botones_encriptar, .botones_desencriptar{
+    float: left;
+    margin-top: 2%;
+    width: 45%;
+    height: 50px;
+    margin-right: 5%;
+    border-radius: 20px;
+    border-width: 0.8px;
+}
+.botones_encriptar{
+    background-color: #0A3871;
+    color: #D8DFE8;
+    border-color: #052051;
 }
 
-.botones_encriptar{
-    padding: 12px 100px;
-    border-radius: 10px;
+.botones_encriptar:hover{
+    background-color: #0e51a3;
+}
+
+.botones_desencriptar {
+    background-color: #D8DFE8;
+    border-color: #0A3871;
+    color: #0A3871;
+}
+
+.botones_desencriptar:hover {
+    background-color: #b5bdc7;
+}
+
+.respuesta{
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+.nada #nadaTitulo{
+    font-size: 1.3em;
+    padding-top: 5%;
+}
+.nada #nadaDescripcion{
+    font-size: 0.7em;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    opacity: 0.5;
+}
+.nadarespuesta{
+    width: 70%;
+    padding-top: 50%;
+    padding-left: auto;
+}
+.resultado{
+    padding-top: 10%;
+    width: 90%;
+    padding-left: 5%;
+    height: 50%;
+}
+
+#final{
     border: none;
-    vertical-align: bottom;
+    font-size: 1.1em;
+    height: 450px;
+}
+
+#final:focus{
+    outline: none;
 }
 

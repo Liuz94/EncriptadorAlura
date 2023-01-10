@@ -136,3 +136,50 @@ textarea{
 .botones_copiar:hover{
     background-color: #e2e2e2;
 }
+
+@media screen and (max-width:768px) {
+body{
+    width: auto;
+}
+.logo{
+    padding-left: 1px;
+}
+.ingresoTexto{
+    padding-right: 10px;
+}
+.textonormal{
+    display: block;
+    width: auto;
+    height: 350px;
+}
+.botones{
+    position: absolute;
+    padding-top: 10px;
+}
+.botones_desencriptar, .botones_encriptar{
+    width: 200px;
+}
+.respuesta{
+    display: block;
+    width: auto;
+    height: 200px;
+    margin-top: 150px;
+}
+.nada{
+    text-align: center;
+    padding-top: 50px;
+}
+.nadarespuesta{
+    display: none;
+    visibility: hidden;
+}
+#final{
+    height: 150px;
+    border: #052051;
+
+}
+.botones_copiar{
+    margin-top: 25px;
+}
+
+}

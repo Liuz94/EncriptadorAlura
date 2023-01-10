@@ -22,10 +22,13 @@
                 <div class="ingresoTexto">
 
                     <textarea id="text_area" class="textonormal" name="mensaje"  placeholder="Ingrese Texto Aqui"></textarea>
+                    
                             <div class="botones">
+
                                 <p class="advertencia">⚠ Solo letras minúsculas y sin acentos</p>
                                 <input onclick="encriptacion()" type="button" class="botones_encriptar" id="encriptar" value="Encriptar">
                                 <input onclick="desencriptacion()" type="button" class="botones_desencriptar" id="desencriptar" value="Desencriptar">
+                            
                             </div>
                 </div>
 
@@ -33,13 +36,17 @@
         <div class="respuesta">
             
             <ul class="nada" id="respuestaNada">
+
                 <li><img class="nadarespuesta" src="imagenes/Muñeco.svg"></li>
                 <li><p id="nadaTitulo">Ningún mensaje fue encontrado</p></li>
                 <li><p  id="nadaDescripcion">Ingresa el texto que desees encriptar o desencriptar.</p></li>
+
             </ul>
             <div  class="resultado">
+
                <textarea readonly="readonly" id="final"></textarea>
                 <input onclick="copiar()" type="button" class="botones_copiar" id="copiar" value="Copiar">
+
             </div>
         </div>
 
@@ -68,6 +75,12 @@
             document.getElementById("final").style.display = "inline";
             document.getElementById("text_area").value = ""; 
             document.getElementById("copiar").style.display = "inline";
+        }
+
+        function regresar(){
+            document.getElementById("respuestaNada").style.display = "inline";
+            document.getElementById("final").style.display = "none";
+            document.getElementById("copiar").style.display = "none";
         }
 
         function capturarTexto(){
@@ -146,6 +159,7 @@
         function copiar(){
             var content = document.getElementById('final').innerHTML;
             navigator.clipboard.writeText(content);
+            regresar();
         }
            
     </script>

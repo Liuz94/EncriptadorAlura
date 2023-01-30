@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,44 +14,60 @@
 
     <title>Encriptador</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1><object class="logo" data="imagenes/Logo.svg"></object></h1>
+    </header>
 
     <main>
-        <h1><img class="logo" src="imagenes/Logo.svg"></h1>
         <div class="conteiner">
-                <div class="ingresoTexto">
+            <div class="ingresoTexto">
 
-                    <textarea id="text_area" class="textonormal" name="mensaje"  placeholder="Ingrese Texto Aqui"></textarea>
-                    
-                            <div class="botones">
+                <textarea id="text_area" class="textonormal" name="mensaje" placeholder="Ingrese Texto Aqui"></textarea>
 
-                                <p class="advertencia">⚠ Solo letras minúsculas y sin acentos</p>
-                                <input onclick="encriptacion()" type="button" class="botones_encriptar" id="encriptar" value="Encriptar">
-                                <input onclick="desencriptacion()" type="button" class="botones_desencriptar" id="desencriptar" value="Desencriptar">
-                            
-                            </div>
+                <div class="botones">
+
+                    <p class="advertencia">⚠ Solo letras minúsculas y sin acentos</p>
+                    <input onclick="encriptacion()" type="button" class="botones_encriptar" id="encriptar"
+                        value="Encriptar">
+                    <input onclick="desencriptacion()" type="button" class="botones_desencriptar" id="desencriptar"
+                        value="Desencriptar">
+
                 </div>
+            </div>
 
         </div>
         <div class="respuesta">
-            
-            <ul class="nada" id="respuestaNada">
 
-                <li><img class="nadarespuesta" src="imagenes/Muñeco.svg"></li>
-                <li><p id="nadaTitulo">Ningún mensaje fue encontrado</p></li>
-                <li><p  id="nadaDescripcion">Ingresa el texto que desees encriptar o desencriptar.</p></li>
+            <div class="conteiner_res">
 
-            </ul>
-            <div  class="resultado">
+                <ul class="nada" id="respuestaNada">
 
-               <textarea readonly="readonly" id="final"></textarea>
-                <input onclick="copiar()" type="button" class="botones_copiar" id="copiar" value="Copiar">
+                    <li><object class="nadarespuesta" data="imagenes/Muñeco.svg"></object></li>
+                    <li>
+                        <p id="nadaTitulo">Ningún mensaje fue encontrado</p>
+                    </li>
+                    <li>
+                        <p id="nadaDescripcion">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </li>
+
+                </ul>
+
+                <div class="resultado">
+                
+                    <textarea readonly="readonly" class="textocopiar" id="final"></textarea>
+                    <input onclick="copiar()" type="button" class="botones_copiar" id="copiar" value="Copiar">
+                
+                </div>
 
             </div>
+
+           
         </div>
 
     </main>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
         var textoEscrito;
@@ -62,33 +79,33 @@
         document.getElementById("final").style.display = "none";
         document.getElementById("copiar").style.display = "none";
         function encriptacion() {
-                condicion = 1;
-                capturarTexto();
+            condicion = 1;
+            capturarTexto();
         }
 
         function desencriptacion() {
-                condicion = 2;
-                capturarTexto();
+            condicion = 2;
+            capturarTexto();
         }
-        function escoder(){
+        function escoder() {
             document.getElementById("respuestaNada").style.display = "none";
             document.getElementById("final").style.display = "inline";
-            document.getElementById("text_area").value = ""; 
+            document.getElementById("text_area").value = "";
             document.getElementById("copiar").style.display = "inline";
         }
 
-        function regresar(){
+        function regresar() {
             document.getElementById("respuestaNada").style.display = "inline";
             document.getElementById("final").style.display = "none";
             document.getElementById("copiar").style.display = "none";
         }
 
-        function capturarTexto(){
+        function capturarTexto() {
             textoEscrito = document.getElementById("text_area").value;
             textoEscrito = textoEscrito.toLowerCase();
 
             console.log(textoEscrito);
-            if(condicion ==1 && textoEscrito != ""){
+            if (condicion == 1 && textoEscrito != "") {
                 textoEncriptado = textoEscrito;
                 escoder();
             }
@@ -97,17 +114,17 @@
                 escoder();
             }
             comparaLetras();
-        } 
+        }
 
-        function comparaLetras(){
-                if(condicion == 1){
-                    codificar();
+        function comparaLetras() {
+            if (condicion == 1) {
+                codificar();
 
-                }
-                if (condicion == 2) {
-                    decodificar();
+            }
+            if (condicion == 2) {
+                decodificar();
 
-                }
+            }
 
 
         }
@@ -116,8 +133,8 @@
             textoEncriptado = "";
             var validacion = 0;
             for (let x = 0; x < textoEscrito.length; x++) {
-               
-                var letra=textoEscrito.charAt(x);
+
+                var letra = textoEscrito.charAt(x);
 
                 for (let y = 0; y < letras.length; y++) {
                     if (letras[y] == letra) {
@@ -129,7 +146,7 @@
                 }
 
                 if (validacion == 2) {
-                     textoEncriptado = textoEncriptado + letra;
+                    textoEncriptado = textoEncriptado + letra;
                 }
 
 
@@ -137,31 +154,32 @@
 
             }
             enviarMensaje(textoEncriptado);
-        }  
-        function decodificar(){
+        }
+        function decodificar() {
             for (let x = 0; x < parametrosencriptacion.length; x++) {
 
                 textoDesencriptado = textoDesencriptado.replace(new RegExp(parametrosencriptacion[x], "g"), letras[x]);
-            
+
             }
-            
-            
+
+
             console.log(textoDesencriptado);
             enviarMensaje(textoDesencriptado);
-            
+
         }
-        function enviarMensaje(mensaje){
+        function enviarMensaje(mensaje) {
 
             $("#final").html(mensaje);
 
         }
 
-        function copiar(){
+        function copiar() {
             var content = document.getElementById('final').innerHTML;
             navigator.clipboard.writeText(content);
             regresar();
         }
-           
+
     </script>
 </body>
+
 </html>

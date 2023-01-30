@@ -1,0 +1,235 @@
+body {
+    background-color: #E9ECF8;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-left: 1em;
+    
+}
+header{
+    padding-top: 1.8em;
+}
+textarea{
+    font-family: 'Inter', sans-serif;
+    color: #0A3871;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: transparent;
+    border-width: 0px;
+}
+.logo{
+    width: 120px;
+    height: 48px;
+}
+
+.conteiner{
+    display: inline-block;
+    width: 55%;
+    height: 500px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.respuesta{
+    display: inline-block;
+    width: 40%;
+    height: 500px;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+.textonormal{
+    resize: none;
+    width: 60%;
+    height: 380px;
+    margin: 1.5em auto;
+    resize: none;
+    
+}
+.textonormal:focus , .textocopiar:focus{
+    outline: none;
+}
+::placeholder {
+    font-family: 'Inter', sans-serif;
+    color: #0A3871;
+    font-style: italic;
+    opacity: .5;
+}
+
+.botones{
+    margin-left: 19%;
+}
+.botones_encriptar,
+.botones_desencriptar {
+    float: left;
+    margin-top: 2%;
+    width: 45%;
+    height: 50px;
+    margin-right: 5%;
+    border-radius: 20px;
+    border-width: 0.8px;
+}
+.botones_encriptar {
+    background-color: #0A3871;
+    color: #D8DFE8;
+    border-color: #052051;
+}
+
+.botones_encriptar:hover {
+    background-color: #0e51a3;
+}
+
+.botones_desencriptar {
+    background-color: #D8DFE8;
+    border-color: #0A3871;
+    color: #0A3871;
+}
+
+.botones_desencriptar:hover {
+    background-color: #b5bdc7;
+}
+
+.advertencia{
+    text-align: initial;
+    font-size: 0.8em;
+    color: #495057;
+}
+
+.conteiner_res{
+    margin: 1.5em auto;
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 580px;
+    width: 60%;
+    top: -4em;
+    left: 6em;
+    vertical-align: middle;
+    border-radius: 5% 5% 5% 5%;
+    background: #FFFFFF;
+    box-shadow: 20px 20px 60px #d9d9d9,
+        -20px -20px 60px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.nadarespuesta{
+    width: 60%;
+}
+
+.nada #nadaTitulo {
+    font-size: 1.3em;
+    padding-top: 5%;
+    padding-left: 10%;
+    color: #343A40;
+    font-weight: bold;
+}
+
+.nada #nadaDescripcion {
+    font-size: 0.7em;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 5%;
+    opacity: 0.5;
+}
+
+.botones_copiar {
+    background-color: #ffffff;
+    border-color: #052051;
+    border-width: 0.8px;
+    width: 60%;
+    height: 50px;
+    border-radius: 15px;
+    color: #0A3871;
+    margin-top: 20px;
+    transition: background-color 0.1s linear 0.1s;
+}
+
+.textocopiar{
+    resize: none;
+    height: 400px;
+}
+
+.botones_copiar:hover {
+    background-color: #e2e2e2;
+}
+
+@media screen and (max-width:768px) {
+body{
+    background-color: #E9ECF8;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-left: 1em;
+}
+.conteiner{
+    width: 90%;
+    height: 300px;
+    display: block;
+}
+.textonormal{
+    height: 250px;
+}
+.botones{
+    margin-left: 1%;
+}
+.botones_encriptar,
+.botones_desencriptar {
+    margin-top: 5%;
+    width: 100%;
+    height: 50px;
+    margin-right: 1%;
+    border-radius: 20px;
+    border-width: 0.8px;
+}
+
+.respuesta {
+    width: 90%;
+    height: 300px;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    margin-top: 10%;
+}
+
+.conteiner_res {
+    background-color: #FFFFFF;
+    position: absolute;
+    height: 250px;
+    width: 90%;
+    top: 0em;
+    left: 1em;
+    border-radius: 5% 5% 5% 5%;
+    background: #FFFFFF;
+    box-shadow: 20px 20px 60px #d9d9d9,
+        -20px -20px 60px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nadarespuesta{
+    display: none;
+}
+
+.nada #nadaTitulo {
+    font-size: 1.4em;
+    padding-top: 0%;
+    padding-left: 0%;
+    color: #343A40;
+    font-weight: bold;
+}
+
+.nada #nadaDescripcion {
+    font-size: 0.9em;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    opacity: 0.5;
+}
+
+.textocopiar {
+    margin-top: 100px;
+    height: 220px;
+    width: 100%;
+}
+}

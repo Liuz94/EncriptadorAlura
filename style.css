@@ -1,6 +1,8 @@
 body{
     background-color: #E9ECF8;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 /*rows="15" cols="30"*/
 textarea{
